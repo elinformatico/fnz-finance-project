@@ -5,14 +5,15 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "users") // avoid reserved word 'user'
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String user_id;
+    private String id;
 
     @Column(unique = true, nullable = false)
-    private String user_name;
+    private String username;
 
     @Column(nullable = false)
     private String password;
@@ -28,26 +29,26 @@ public class User {
 
     public User () {}
 
-    public User(String user_id, String user_name, String password) {
-        this.user_id = user_id;
-        this.user_name = user_name;
+    public User(String id, String username, String password) {
+        this.id = id;
+        this.username = username;
         this.password = password;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getId() {
+        return id;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

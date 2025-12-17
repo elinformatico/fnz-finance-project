@@ -9,7 +9,7 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String category_id;
+    private String id;
 
     @Column(unique = true, nullable = false)
     private String name;
@@ -26,17 +26,17 @@ public class Category {
     public Category () {
     }
 
-    public Category(String category_id, String name) {
-        this.category_id = category_id;
+    public Category(String id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public String getCategory_id() {
-        return category_id;
+    public String getId() {
+        return id;
     }
 
-    public void setCategory_id(String category_id) {
-        this.category_id = category_id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

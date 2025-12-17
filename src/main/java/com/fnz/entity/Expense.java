@@ -10,7 +10,7 @@ public class Expense {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String expense_id;
+    private String id;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -37,20 +37,20 @@ public class Expense {
     public Expense () {
     }
 
-    public Expense(String expense_id, User user, Category category, String description, BigDecimal amount) {
-        this.expense_id = expense_id;
+    public Expense(String id, User user, Category category, String description, BigDecimal amount) {
+        this.id = id;
         this.user = user;
         this.category = category;
         this.description = description;
         this.amount = amount;
     }
 
-    public String getExpense_id() {
-        return expense_id;
+    public String getId() {
+        return id;
     }
 
-    public void setExpense_id(String expense_id) {
-        this.expense_id = expense_id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public User getUser() {
