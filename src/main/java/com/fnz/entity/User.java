@@ -16,6 +16,12 @@ public class User {
     private String username;
 
     @Column(nullable = false)
+    private String fullName;
+
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    @Column(nullable = false)
     private String password;
 
     // Automatically set creation timestamp before persisting
@@ -29,9 +35,11 @@ public class User {
 
     public User () {}
 
-    public User(String id, String username, String password) {
+    public User(String id, String username, String fullName, String email, String password) {
         this.id = id;
         this.username = username;
+        this.fullName = fullName;
+        this.email = email;
         this.password = password;
     }
 
@@ -49,6 +57,22 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
