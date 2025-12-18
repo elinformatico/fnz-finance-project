@@ -19,11 +19,6 @@ public class SecurityConfig {
     private UserService userService;
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
     public UserDetailsService userDetailsService() {
         return username -> userService.findByUsername(username)
                 .map(user -> org.springframework.security.core.userdetails.User
