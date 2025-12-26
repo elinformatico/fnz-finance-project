@@ -1,4 +1,4 @@
-package com.fnz.dto;
+package com.fnz.dto.expense;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

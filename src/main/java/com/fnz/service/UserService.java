@@ -1,8 +1,8 @@
 package com.fnz.service;
 
-import com.fnz.dto.UserDto;
-import com.fnz.dto.UserProfileResponseDto;
-import com.fnz.dto.UserUpdateDto;
+import com.fnz.dto.user.UserDto;
+import com.fnz.dto.user.UserProfileResponseDto;
+import com.fnz.dto.user.UserUpdateDto;
 import com.fnz.entity.User;
 import com.fnz.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

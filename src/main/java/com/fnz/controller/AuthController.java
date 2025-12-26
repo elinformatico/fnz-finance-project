@@ -1,6 +1,6 @@
 package com.fnz.controller;
 
-import com.fnz.dto.UserDto;
+import com.fnz.dto.user.UserDto;
 import com.fnz.entity.User;
 import com.fnz.service.UserService;
 import jakarta.validation.Valid;

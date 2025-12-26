@@ -1,6 +1,6 @@
 package com.fnz.service;
 
-import com.fnz.dto.CategoryDto;
+import com.fnz.dto.category.CategoryDto;
 import com.fnz.entity.Category;
 import com.fnz.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;

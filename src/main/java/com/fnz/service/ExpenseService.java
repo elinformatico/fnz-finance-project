@@ -1,6 +1,6 @@
 package com.fnz.service;
 
-import com.fnz.dto.ExpenseDto;
+import com.fnz.dto.expense.ExpenseDto;
 import com.fnz.entity.Expense;
 import com.fnz.entity.User;
 import com.fnz.repository.ExpenseRepository;

@@ -1,4 +1,4 @@
-package com.fnz.dto;
+package com.fnz.dto.user;
 
 import lombok.Getter;
 import lombok.Setter;

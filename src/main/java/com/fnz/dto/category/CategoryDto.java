@@ -1,4 +1,4 @@
-package com.fnz.dto;
+package com.fnz.dto.category;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

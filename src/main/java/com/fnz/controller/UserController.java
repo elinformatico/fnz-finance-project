@@ -1,18 +1,14 @@
 package com.fnz.controller;
 
-import com.fnz.dto.UserDto;
-import com.fnz.dto.UserProfileResponseDto;
-import com.fnz.dto.UserUpdateDto;
+import com.fnz.dto.user.UserProfileResponseDto;
+import com.fnz.dto.user.UserUpdateDto;
 import com.fnz.entity.User;
 import com.fnz.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")

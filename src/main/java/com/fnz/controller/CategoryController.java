@@ -1,6 +1,6 @@
 package com.fnz.controller;
 
-import com.fnz.dto.CategoryDto;
+import com.fnz.dto.category.CategoryDto;
 import com.fnz.entity.Category;
 import com.fnz.service.CategoryService;
 import jakarta.validation.Valid;
