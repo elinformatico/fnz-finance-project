@@ -1,6 +1,7 @@
 package com.fnz.controller;
 
 import com.fnz.dto.UserDto;
+import com.fnz.dto.UserProfileResponseDto;
 import com.fnz.dto.UserUpdateDto;
 import com.fnz.entity.User;
 import com.fnz.service.UserService;
@@ -20,23 +21,16 @@ public class UserController {
     private UserService userService;
 
     @PutMapping("/me")
-    public ResponseEntity<User> update(@Valid @RequestBody UserUpdateDto updateDto) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName();
-
-        User updatedUser = userService.update(username, updateDto);
+    public ResponseEntity<User> update(@Valid @RequestBody UserUpdateDto updateDto, Authentication authentication) {
+        User updatedUser = userService.update(authentication.getName(), updateDto);
         return ResponseEntity.ok(updatedUser);
     }
 
     @GetMapping("/me")
-    public ResponseEntity<User> getProfile() {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName();
-
-        Optional<User> currentUser = userService.findByUsername(username);
-        if(currentUser.isPresent())
-            return ResponseEntity.ok(currentUser.get());
-        else
-            throw new RuntimeException("User not found");
+    public ResponseEntity<UserProfileResponseDto> getProfile(Authentication authentication) {
+        // Spring will inject "authentication" automatically
+        return ResponseEntity.ok(
+                userService.getUserProfile(authentication.getName())
+        );
     }
 }

@@ -1,6 +1,7 @@
 package com.fnz.service;
 
 import com.fnz.dto.UserDto;
+import com.fnz.dto.UserProfileResponseDto;
 import com.fnz.dto.UserUpdateDto;
 import com.fnz.entity.User;
 import com.fnz.repository.UserRepository;
@@ -48,5 +49,19 @@ public class UserService {
 
     public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    public UserProfileResponseDto getUserProfile(String username) {
+
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        UserProfileResponseDto userDto = new UserProfileResponseDto();
+        userDto.setId(user.getId());
+        userDto.setUsername(user.getUsername());
+        userDto.setFullName(user.getFullName());
+        userDto.setEmail(user.getEmail());
+
+        return userDto;
     }
 }
